@@ -1,0 +1,174 @@
+@font-face {
+    font-family: "ColfaxAI";
+    src: url(https://cdn.openai.com/API/fonts/ColfaxAIRegular.woff2)
+        format("woff2"),
+      url(https://cdn.openai.com/API/fonts/ColfaxAIRegular.woff) format("woff");
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "ColfaxAI";
+    src: url(https://cdn.openai.com/API/fonts/ColfaxAIBold.woff2) format("woff2"),
+      url(https://cdn.openai.com/API/fonts/ColfaxAIBold.woff) format("woff");
+    font-weight: bold;
+    font-style: normal;
+  }
+  
+  .container input::-webkit-outer-spin-button,
+  .container input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  
+.startMenu{
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.startMenu button{
+font-size: 20px;
+}
+
+  .container{
+    display: flex;
+    /* justify-content:space-between; */
+    background-color: #000000;
+    padding: 0%;
+    margin: 0%;
+    width: 100%;
+    min-height: 100vh;
+    
+  }
+  
+  .main,
+  .main input {
+    font-size: 16px;
+    line-height: 24px;
+    color: #353740;
+    font-family: "ColfaxAI", Helvetica, sans-serif;
+    /* width: 100%; */
+  }
+  .main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
+    width: 100%;
+    border: 2px solid black;
+  }
+  .main .icon {
+    width: 34px;
+  }
+  .main h3 {
+    font-size: 52px;
+    line-height: 40px;
+    font-weight: bold;
+    color: #1ef77f;
+    margin: 16px 0 40px;
+  }
+  .main form {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+  }
+  .main .searchBox textarea {
+    padding: 12px 16px;
+    border: 1px solid #10a37f;
+    border-radius: 4px;
+    margin-bottom: 24px;
+    outline-color: #10a37f;
+    min-width: 470px;
+    width: 470px;
+    max-width: 470px;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 200px;
+    
+    
+  }
+  .main input {
+    padding: 12px 16px;
+    border: 1px solid #10a37f;
+    border-radius: 4px;
+    margin-bottom: 24px;
+    outline-color: #10a37f;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    
+    
+  }
+  .main ::placeholder {
+    color: #8e8ea0;
+    opacity: 1;
+  }
+  .main input[type="submit"] {
+    padding: 12px 0;
+    color: #fff;
+    background-color: #10a37f;
+    border: none;
+    border-radius: 4px;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+  }
+  .main .result {
+    font-weight: bold;
+    margin-top: 40px;
+  }
+  
+  .content_box{
+  margin-top: 60px;
+  /* padding: 0 40px; */
+  /* border: 2px solid red; */
+  /* margin: 0 10px; */
+  width: 80%;
+  }
+  .small_content_box{
+    /* width: 90%; */
+    width: 100%;
+    /* min-height: 150px; */
+    margin-top: 10px;
+    background-color: #383838;
+    padding: 10px 10px;
+    color:  white;
+    border-radius: 5px;
+    height: 200px;
+    
+  }
+  .small_content_box h2 {
+    font-size: 25px;
+  
+  }
+  
+  .small_content_box .para{
+    margin-bottom: 30px;
+    background-color: #1f1f1f;
+    padding: 10px;
+    border-radius: 10px;
+    height: 200px;
+    overflow: auto;
+  }
+  
+  
+  .button{
+    padding: 12px ;
+    color: #fff;
+    background-color: #10a37f;
+    border: none;
+    border-radius: 4px;
+    text-align: center;
+    cursor: pointer;
+    margin-right: 10px;
+    font-size: 15px;
+    margin-top: 10px;
+  }
+  
+  
+  
+  .searchBox{
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+  }

@@ -1,0 +1,36 @@
+.settingBox{
+    /* border: 2px solid red; */
+    width: 50%;
+}
+
+.settingBox h1{
+    color: white;
+}
+
+.settingBox .actions{
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    justify-content: space-between;
+}
+
+.settingBox .actions .select{
+margin-bottom: 20px;
+width: 100%;
+}
+
+.settingBox .actions span{
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 1px;
+}
+
+.settingBox button{
+    height: 50px;
+    background-color: #027e7e;
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+    width: 100%;
+}
