@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from "../styles/article.module.css"
+// import styles from "../styles/article.module.css"
 import { useState } from 'react'
 import Select from 'react-select'
 // import "../styles/globals.css"
@@ -91,7 +91,12 @@ const Article = ({ article, writearticle, setwriteArticle, index, writeIntro, se
       }
 
       console.log(data.article)
-      setArticles([...Articles.filter(item => item !== article),data.article])
+      setArticles([...Articles.map(item => {
+        if(item === article){
+          return data.article
+        }
+        return item
+      })])
 
 
 
@@ -142,19 +147,19 @@ const Article = ({ article, writearticle, setwriteArticle, index, writeIntro, se
 
 
   return (
-    <div className={styles.small_content_box}>
+    <div className={"small_content_box"}>
       {/* <h2 suppressContentEditableWarning="true" contentEditable="true" onInput={(e)=>{changeHeading(e.currentTarget.textContent,topic)}}>{topic.title}</h2> */}
-      <input className={styles.topicHeading} onChange={(e) => {
+      <input className={"articletitle"} onChange={(e) => {
         changeHeading(e.target.value, article)
       }} value={article.title} />
 
-      <div className={styles.actions}>
-        <button className={styles.button} onClick={() => { deleteArticle(article) }}>Delete</button>
+      <div className={"actions"}>
+        <button className={"button"} onClick={() => { deleteArticle(article) }}>Delete</button>
         {!article._id ?
-          (<button className={styles.button} onClick={() => {
+          (<button className={"button"} onClick={() => {
             saveArticle(article)
           }}>Save</button>) :
-          <button className={styles.button} onClick={() => {
+          <button className={"button"} onClick={() => {
             setwriteArticle(article)
             setMode("writearticle")
           }}>Write</button>

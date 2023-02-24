@@ -1,11 +1,17 @@
 import { Configuration, OpenAIApi } from "openai";
 require('dotenv').config()
+// const Article = require("../../models/article")
+import Topic from "../../models/topic"
+
 
 
 export default async function (req, res) {
+  console.log("writing topic")
+  console.log(req.body. settings.prompt)
   
+  const {topic,settings} = req.body
   const configuration = new Configuration({
-    apiKey: req.body.apiKey,
+    apiKey: settings.apiKey,
   });
 
   const openai = new OpenAIApi(configuration);
@@ -19,7 +25,7 @@ export default async function (req, res) {
     return;
   }
 
-  const input = req.body.input || '';
+  const input = topic.topic || '';
   if (input.trim().length === 0) {
     res.status(400).json({
       error: {
@@ -31,16 +37,17 @@ export default async function (req, res) {
 
   try {
     const completion = await openai.createCompletion({
-      model: model,
-      prompt: generatePrompt(input,promt),
-      temperature: temperature,
-      max_tokens: tokens,
+      model: settings.model.value,
+      prompt: generatePrompt(input,settings.promt),
+      temperature: settings.temperature,
+      max_tokens: settings.tokens,
       top_p: 1,
       frequency_penalty: 0,
       presence_penalty: 0,
     });
 
     console.log(completion.data.choices[0].text.split(","))
+    await Topic.findOneAndUpdate({_id:topic._id},{para:completion.data.choices[0].text})
     res.status(200).json({ result: completion.data.choices[0].text });
 
   } catch (error) {
@@ -61,5 +68,5 @@ export default async function (req, res) {
 
 function generatePrompt(input,promt) {
 
-  return `write about ${input} of 200 to 300 words.${promt}`
+  return `write ${input}, ${promt}`
 }

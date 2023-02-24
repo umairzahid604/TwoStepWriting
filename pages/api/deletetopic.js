@@ -1,4 +1,4 @@
-const topic = require("../../models/topic")
+const Topic = require("../../models/topic")
 require('dotenv').config()
 
 export default async function (req, res) {

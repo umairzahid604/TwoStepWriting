@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "dotenv": "^16.0.3",
+    "fast-xml-parser": "^4.1.1",
     "mongoose": "^6.9.1",
     "next": "^13.1.1",
     "openai": "^3.1.0",
