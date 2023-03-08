@@ -41,22 +41,23 @@ body {
 
 .startMenu h3 {
   /* border: 2px solid #e6e6e6; */
-  font-size: 50px;
-  color: #00ffaa;
+  font-size: 62px;
+  color: #1d1d1d;
   text-align: center;
   /* border: 2px solid red; */
-  width: 540px;
+  width: 500px;
 }
 
 .startMenu button {
   font-size: 20px;
+  width: 500px;
 
 }
 
 .container {
   display: flex;
   /* justify-content:space-between; */
-  background-color: #000000;
+  background-color: #f5f5f5;
   padding: 0%;
   margin: 0%;
   width: 100%;
@@ -64,21 +65,34 @@ body {
 
 }
 
-.sidebar-wrapper {
+.sidebar-wrapper,
+.topic-sidebar-wrapper {
   width: 400px;
+  min-width: 300px;
   position: relative;
+  font-weight: bold;
+  /* border: .1px solid white; */
+  /* margin-right: px; */
+  box-shadow: 0px 0px 0px 1px #000000;
+}
+
+.topic-sidebar-wrapper {
+  /* width: 700px; */
+  min-width: 380px;
+  padding: 5px;
 }
 
 .sidebar {
   position: sticky;
   top: 0%;
-  color: white;
+  color: rgb(0, 0, 0);
   /* border: 2px solid red; */
   width: 95%;
   padding: 5px;
-  padding-left: 10px;
-  background-color: #161616;
-  height: 100vh;
+  /* padding-left: 10px; */
+  /* background-color: #161616; */
+  background-color: transparent;
+  height: 98vh;
   /* border: 2px solid red; */
   display: flex;
   flex-direction: column;
@@ -89,37 +103,68 @@ body {
 .sidebar h3 {
   font-size: 20px;
   font-family: Arial, Helvetica, sans-serif;
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0px .1px .1px .1px black;
 }
-.sidebar .articles{
+
+.sidebar .sidebar-items {
   overflow-y: auto;
   height: 600px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 5px;
+  /* width: 90%; */
+  /* background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0px .1px .1px .1px black; */
 }
 
-.sidebar .article {
-  font-size: 20px;
+.sidebar .sidebar-item {
+  font-size: 17px;
   /* background-color: #333333; */
   padding: 2px;
-  margin-top: 10px;
+  /* margin-top: 10px; */
   cursor: pointer;
   display: flex;
-justify-content: space-between;  
-align-items: center;
+  justify-content: space-between;
+  /* align-items: center; */
+  flex-direction: column;
+  /* border: 2px solid red; */
+  background-color: white;
+  padding: 10px;
+  border-radius: 2px;
+  box-shadow: 0px 1px .3px .5px black;
+  margin-bottom: 5px;
 
 
 }
-.sidebar .article .button{
-width: 50px;
-height: 10px;
-display: flex;
-justify-content: center;
-align-items: center;
-}
-
 .sidebar .actions {
   width: 100%;
   display: flex;
-  flex-direction: column;
-  margin-bottom: 20px;
+  /* flex-direction: column; */
+  /* margin-bottom: 20px; */
+}
+
+.sidebar .sidebar-item .button {
+  width: auto;
+  height: 10px;
+  background-color: #111111;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: #ffffff !important; */
+  /* background: transparent; */
+  /* border: 1px solid #00ff2a; */
+  /* color: #ff0000; */
+}
+
+
+
+.topicSidebar {
+  /* background-color: #0c0c0c; */
+  /* padding: 10px; */
 }
 
 .main,
@@ -137,7 +182,6 @@ align-items: center;
   align-items: center;
   padding-top: 10px;
   width: 100%;
-  border: 2px solid black;
 }
 
 .main .icon {
@@ -167,6 +211,8 @@ align-items: center;
 
 
 }
+
+
 
 .main input {
   padding: 12px 16px;
@@ -240,7 +286,7 @@ align-items: center;
 .button {
   padding: 12px;
   color: #fff;
-  background-color: #10a37f;
+  background-color: #2e2e2e;
   border: none;
   border-radius: 4px;
   text-align: center;
@@ -248,6 +294,12 @@ align-items: center;
   margin-right: 10px;
   font-size: 15px;
   margin-top: 10px;
+}
+
+.button:hover{
+transition: .5s all;
+background-color: #535353;
+
 }
 
 
@@ -270,27 +322,43 @@ align-items: center;
   display: flex;
   flex-direction: column;
   /* background-color: #0a0a0a; */
-  border-radius: 5px ;
+  border-radius: 5px;
   margin: 20px 0;
-  width: 70%;
+  width: 83%;
   background-color: #2b2b2b;
   padding: 10px;
-/* border: 2px solid red; */
+  /* border: 2px solid red; */
 }
 
-.topics-list .topics-list-heading{
+.topics-list .topics-list-heading {
   display: flex;
   justify-content: space-between;
 }
 
 
-.topics-list .topic{
-/* border: 2px solid red; */
-display: flex;
-margin-top: 5px;
-/* border: 2px solid red; */
-justify-content: space-between;
-align-items: center;
+.topics-list .topic {
+  /* border: 2px solid red; */
+  display: flex;
+  margin-top: 5px;
+  /* border: 2px solid red; */
+  justify-content: space-between;
+  /* flex-direction: column; */
+  align-items: center;
+}
+
+.topics-list .topic .topicname {
+  width: 600px;
+}
+
+.topics-list .topic .action-wrapper {
+  /* width: 100px; */
+  width: 200px;
+  display: flex;
+  justify-content: flex-end;
+  /* align-items: center; */
+  /* border: 2px solid red; */
+
+  /* height: 10px; */
 }
 
 .writingBox .content {
@@ -396,27 +464,23 @@ align-items: center;
 }
 
 
-
-.small_content_box .actions {
-  /* border: 2px solid red; */
-  /* display: flex; */
-  /* flex-direction: column; */
-}
-
 .small_content_box .actions button {
   width: 200px;
   /* margin-top: 10px; */
 }
 
 
-.hideTopics{
+.hideTopics {
   height: 70px;
   overflow: hidden;
+  transition: .5s all;
 }
 
-.showTopics{
-  height: auto;
+.showTopics {
+  height: 400px;
   overflow: auto;
+  transition: .5s all;
+
 }
 
 /* SETTINGS STYLES */
@@ -455,20 +519,20 @@ align-items: center;
   margin-bottom: 1px;
 }
 
-.settingBox button {
+.settingBox .button {
   height: 50px;
-  background-color: #006d3a;
+  /* background-color: #006d3a; */
   color: white;
   font-size: 25px;
   cursor: pointer;
-  /* width: 100%; */
+  width: 100%;
   margin-bottom: 10px;
-  border-radius: 10px;
+  /* border-radius: 10px; */
 }
 
 
-.completeArticle{
-  width: 80%;
+.completeArticle {
+  width: 90%;
   background-color: white;
   color: black;
   margin: 10px;
@@ -477,3 +541,36 @@ align-items: center;
   white-space: pre-wrap;
 }
 
+.hideSidebar {
+  display: none;
+}
+
+
+.topicsBox,.articleBox {
+  width: 100%;
+  /* border: 2px solid red; */
+}
+
+.topicsBox textarea {
+  width: 350px;
+  min-width: 350px;
+  max-width: 350px;
+  height: 100px;
+  min-height: 100px;
+  max-height: 100px;
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  border-radius: 5px;
+  
+}
+
+.articleBox textarea{
+  min-width: 270px;
+  max-width: 270px;
+  width: 270px;
+  height: 100px;
+  min-height: 100px;
+  max-height: 100px;
+
+
+}

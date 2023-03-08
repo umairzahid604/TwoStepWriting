@@ -68,5 +68,5 @@ export default async function (req, res) {
 
 function generatePrompt(input,promt) {
 
-  return `write ${input}, ${promt}`
+  return `${input}, ${promt}`
 }

@@ -1,3 +1,5 @@
+// NOT IN USE
+
 import React from 'react'
 import { useState, useEffect } from 'react'
 
@@ -44,7 +46,7 @@ const writingBox = ({ topic,article }) => {
         <div>
             {topic.topic}
             <button>delete</button>
-            <button>write</button>
+            {/* <button>write</button> */}
         
         </div>
 
